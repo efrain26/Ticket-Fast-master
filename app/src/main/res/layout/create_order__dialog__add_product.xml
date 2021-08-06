@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="30dp">
+
+    <AutoCompleteTextView
+            android:id="@+id/create_order_act_select_product"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/selecciona_producto"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+            android:id="@+id/create_order_ll_price_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/create_order_act_select_product">
+
+        <TextView
+                android:id="@+id/create_order_tv_price_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:text="@string/precio_pre"
+                android:textSize="20sp" />
+
+        <EditText
+                android:id="@+id/create_order_et_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:drawableStart="@drawable/ic_money_24dp"
+                android:drawableLeft="@drawable/ic_money_24dp"
+                android:hint="@string/x0_00"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+                android:textSize="20sp" />
+    </LinearLayout>
+
+    <TextView
+            android:id="@+id/create_order_tv_quantity_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/cantidad_pre"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/create_order_et_quantity"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/create_order_et_quantity"
+            app:layout_constraintTop_toBottomOf="@id/create_order_ll_price_container" />
+
+    <EditText
+            android:id="@+id/create_order_et_quantity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="@string/_0"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/create_order_tv_quantity_label"
+            app:layout_constraintLeft_toRightOf="@+id/create_order_tv_quantity_label"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/create_order_ll_price_container" />
+
+    <LinearLayout
+            android:id="@+id/create_order_ll_stock_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/create_order_tv_quantity_label">
+
+        <TextView
+                android:id="@+id/create_order_tv_stock_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:text="@string/cant_en_inventario_"
+                android:textSize="16sp" />
+
+        <TextView
+                android:id="@+id/create_order_tv_stock"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:text="100.00"
+                android:textSize="18sp" />
+    </LinearLayout>
+
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/create_order_checkbox_is_return"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/es_una_devolucion"
+            app:layout_constraintTop_toBottomOf="@id/create_order_ll_stock_container" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

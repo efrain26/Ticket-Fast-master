@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="30dp">
+
+    <AutoCompleteTextView
+            android:id="@+id/create_client_price_act_select_product"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/selecciona_producto"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+            android:id="@+id/create_client_price_tv_base_price_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/precio_base_pre"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/create_client_price_tv_base_price"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/create_client_price_tv_base_price"
+            app:layout_constraintTop_toBottomOf="@id/create_client_price_act_select_product" />
+
+    <TextView
+            android:id="@+id/create_client_price_tv_base_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text=""
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/create_client_price_tv_base_price_label"
+            app:layout_constraintLeft_toRightOf="@+id/create_client_price_tv_base_price_label"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/create_client_price_act_select_product" />
+
+    <TextView
+            android:id="@+id/create_client_price_tv_custom_price_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/precio_nuevo"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/create_client_price_et_custom_price"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/create_client_price_tv_base_price"
+            app:layout_constraintTop_toBottomOf="@id/create_client_price_tv_base_price_label" />
+
+    <EditText
+            android:id="@+id/create_client_price_et_custom_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:drawableStart="@drawable/ic_money_24dp"
+            android:drawableLeft="@drawable/ic_money_24dp"
+            android:hint="@string/x0_00"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal"
+            app:layout_constraintLeft_toRightOf="@+id/create_client_price_tv_base_price_label"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/create_client_price_tv_base_price" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

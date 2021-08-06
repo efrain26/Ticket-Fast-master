@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+    <EditText
+            android:id="@+id/product_dialog_edittext_product_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/nombre_del_producto"
+            android:importantForAutofill="no"
+            android:inputType="textCapWords"
+            android:maxLength="36" />
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <EditText
+                android:id="@+id/product_dialog_edittext_base_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableStart="@drawable/ic_money_24dp"
+                android:drawableLeft="@drawable/ic_money_24dp"
+                android:hint="@string/precio_base"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal" />
+
+        <EditText
+                android:id="@+id/product_dialog_edittext_stock"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/stock"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+            android:id="@+id/create_order_menu_btn_clear_cart"
+            android:title="@string/limpiar_carrito"
+            app:showAsAction="always"
+            android:icon="@drawable/ic_delete_all"
+        />
+</menu>

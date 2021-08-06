@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    <androidx.appcompat.widget.Toolbar
+            app:title="@string/historial_de_ordenes"
+            android:id="@+id/order_history_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:layout_constraintTop_toTopOf="parent"
+    />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:padding="20dp"
+            app:layout_constraintTop_toBottomOf="@id/order_history_toolbar"
+            app:layout_constraintBottom_toBottomOf="parent"
+    >
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical"
+                      app:layout_constraintTop_toTopOf="parent"
+                      android:id="@+id/order_history_ll_static_top">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/order_history_ll_select_client">
+
+                <Button
+                        android:id="@+id/order_history_btn_select_client"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/selecciona_un_cliente"
+                        android:textSize="16sp"
+                        android:background="@drawable/button_selector"
+                        android:textColor="@color/white"
+                android:layout_margin="8dp"/>
+                <TextView
+                        android:id="@+id/order_history_tv_select_client"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="@string/ninguno"
+                        android:textSize="18sp"/>
+            </LinearLayout>
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/order_history_ll_select_date_start">
+
+                <Button
+                        android:id="@+id/order_history_btn_select_date_range"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/fechas"
+                        android:textSize="16sp"
+                        android:background="@drawable/button_selector"
+                        android:textColor="@color/white"
+                        android:layout_margin="8dp"/>
+                <TextView
+                        android:id="@+id/order_history_tv_select_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="@string/ninguno"
+                        android:textSize="18sp"/>
+            </LinearLayout>
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/order_history_ll_select_date_end">
+                <TextView
+                        android:id="@+id/order_history_tv_select_date_end"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ninguno"
+                        android:textSize="18sp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@id/order_history_ll_static_top"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:id="@+id/order_history_lv_orders">
+
+        </androidx.recyclerview.widget.RecyclerView>
+        <ImageButton
+                android:id="@+id/order_history_imbtn_donwloadFile"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp" android:background="@drawable/background_image_edit_icon"
+                android:padding="10dp" app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" app:srcCompat="@drawable/ic_download"
+                android:contentDescription="TODO"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
