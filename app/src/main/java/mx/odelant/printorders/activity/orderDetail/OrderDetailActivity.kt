@@ -66,22 +66,25 @@ class OrderDetailActivity : AppCompatActivity() {
             }
         }
         val db = AppDatabase.getInstance(this)
+
         GlobalScope.launch {
             val ticket = generateTicketAsync(db, mCartId, printer).await()
-
-            order_detail_ticket_preview.setTicket(ticket)
-
-            order_detail_btn_finalize.setOnClickListener {
-                try {
-                    printer.send(ticket)
-                } catch (e: IOException) {
-                    Snackbar.make(
-                        order_detail_main_view,
-                        "Hubo un problema imprimiendo.",
-                        Snackbar.LENGTH_LONG
-                    ).show()
+            runOnUiThread{
+                order_detail_ticket_preview.setTicket(ticket)
+                order_detail_btn_finalize.setOnClickListener {
+                    try {
+                        printer.send(ticket)
+                    } catch (e: IOException) {
+                        Snackbar.make(
+                            order_detail_main_view,
+                            "Hubo un problema imprimiendo.",
+                            Snackbar.LENGTH_LONG
+                        ).show()
+                    }
                 }
             }
+
+
         }
     }
 
@@ -204,7 +207,7 @@ class OrderDetailActivity : AppCompatActivity() {
                 .feedLine()
                 .menuLine(
                     "Total:",
-                    "$${SpannableString((cartAsync.await()?.totalPriceInCents ?: 0).toString()).setSpan( StyleSpan(Typeface.BOLD), 0, 10, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)}"
+                    "$${SpannableString((cartAsync.await()?.totalPriceInCents ?: 0).toString()).setSpan( StyleSpan(Typeface.BOLD), 0, 0, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)}"
                 )
                 .divider()
                 .feedLine(2)
